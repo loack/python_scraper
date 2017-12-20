@@ -1,0 +1,55 @@
+1513353820193	geckodriver	INFO	geckodriver 0.19.1
+1513353820198	geckodriver	INFO	Listening on 127.0.0.1:49845
+1513353821317	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.gnfNsFAW8Yse"
+1513353822026	Marionette	INFO	Enabled via --marionette
+
+(firefox:2066): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+/usr/bin/dbus-launch terminated abnormally without any error message
+
+(firefox:2066): LIBDBUSMENU-GLIB-WARNING **: Unable to get session bus: Failed to execute child process "dbus-launch" (No such file or directory)
+
+(firefox:2066): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+/usr/bin/dbus-launch terminated abnormally without any error message
+
+(/usr/lib/firefox/firefox:2126): Gdk-WARNING **: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1009.
+
+1513353866387	geckodriver	INFO	geckodriver 0.19.1
+1513353866391	geckodriver	INFO	Listening on 127.0.0.1:42847
+1513353867547	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.eb2zng7MX5Xn"
+1513353869502	Marionette	INFO	Enabled via --marionette
+
+(firefox:2193): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+/usr/bin/dbus-launch terminated abnormally without any error message
+
+(firefox:2193): LIBDBUSMENU-GLIB-WARNING **: Unable to get session bus: Failed to execute child process "dbus-launch" (No such file or directory)
+
+(/usr/lib/firefox/firefox:2253): Gdk-WARNING **: /usr/lib/firefox/firefox: Fatal IO error 11 (Resource temporarily unavailable) on X server :1009.
+
+1513353886531	geckodriver	INFO	geckodriver 0.19.1
+1513353886536	geckodriver	INFO	Listening on 127.0.0.1:54459
+1513353887680	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.UBLc2Yl1tYTu"
+1513353889236	Marionette	INFO	Enabled via --marionette
+
+(firefox:2324): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+/usr/bin/dbus-launch terminated abnormally without any error message
+
+(firefox:2324): LIBDBUSMENU-GLIB-WARNING **: Unable to get session bus: Failed to execute child process "dbus-launch" (No such file or directory)
+
+(firefox:2324): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+/usr/bin/dbus-launch terminated abnormally without any error message
+1513353890828	Marionette	INFO	Listening on port 37702
+
+(firefox:2324): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+/usr/bin/dbus-launch terminated abnormally without any error message
+1513353890899	Marionette	WARN	TLS certificate errors will be ignored for this session
+1513353890975	Marionette	DEBUG	Register listener.js for window 2147483649
+1513353891019	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+
+(firefox:2324): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+/usr/bin/dbus-launch terminated abnormally without any error message
+1513353892494	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1513353892495	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript warning: http://www.industrie-expo.com/liste-catalogue-exposants/public/js/jQueryLib/jQuery/jquery.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1513353893487	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://www.industrie-expo.com/liste-catalogue-exposants/"
+1513353894306	Marionette	DEBUG	Received DOM event "pageshow" for "http://www.industrie-expo.com/liste-catalogue-exposants/"
+[Child 2384, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-bfYN6l/firefox-57.0.1+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353

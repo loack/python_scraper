@@ -1,0 +1,54 @@
+1513352407170	geckodriver	INFO	geckodriver 0.19.1
+1513352407179	geckodriver	INFO	Listening on 127.0.0.1:34731
+1513352408291	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.EOSTVY5IT7Sn"
+1513352409354	Marionette	INFO	Enabled via --marionette
+
+(firefox:1569): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+/usr/bin/dbus-launch terminated abnormally without any error message
+
+(firefox:1569): LIBDBUSMENU-GLIB-WARNING **: Unable to get session bus: Failed to execute child process "dbus-launch" (No such file or directory)
+
+(firefox:1569): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+/usr/bin/dbus-launch terminated abnormally without any error message
+1513352410837	Marionette	INFO	Listening on port 34711
+1513352410904	Marionette	WARN	TLS certificate errors will be ignored for this session
+1513352410965	Marionette	DEBUG	Register listener.js for window 2147483649
+
+(firefox:1569): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+/usr/bin/dbus-launch terminated abnormally without any error message
+1513352411020	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+
+(firefox:1569): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+/usr/bin/dbus-launch terminated abnormally without any error message
+1513352412520	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1513352412521	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript warning: http://www.industrie-expo.com/liste-catalogue-exposants/public/js/jQueryLib/jQuery/jquery.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1513352413619	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://www.industrie-expo.com/liste-catalogue-exposants/"
+1513352414442	Marionette	DEBUG	Received DOM event "pageshow" for "http://www.industrie-expo.com/liste-catalogue-exposants/"
+1513352444570	geckodriver	INFO	geckodriver 0.19.1
+1513352444573	geckodriver	INFO	Listening on 127.0.0.1:59050
+1513352445680	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.BstIPau0WrRR"
+1513352446193	Marionette	INFO	Enabled via --marionette
+
+(firefox:1725): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+/usr/bin/dbus-launch terminated abnormally without any error message
+
+(firefox:1725): LIBDBUSMENU-GLIB-WARNING **: Unable to get session bus: Failed to execute child process "dbus-launch" (No such file or directory)
+
+(firefox:1725): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+/usr/bin/dbus-launch terminated abnormally without any error message
+1513352447427	Marionette	INFO	Listening on port 35635
+1513352447492	Marionette	WARN	TLS certificate errors will be ignored for this session
+1513352447561	Marionette	DEBUG	Register listener.js for window 2147483649
+
+(firefox:1725): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+/usr/bin/dbus-launch terminated abnormally without any error message
+1513352447606	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+
+(firefox:1725): GConf-WARNING **: Client failed to connect to the D-BUS daemon:
+/usr/bin/dbus-launch terminated abnormally without any error message
+1513352447841	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1513352447841	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript warning: http://www.industrie-expo.com/liste-catalogue-exposants/public/js/jQueryLib/jQuery/jquery.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1513352448797	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://www.industrie-expo.com/liste-catalogue-exposants/"
+1513352449509	Marionette	DEBUG	Received DOM event "pageshow" for "http://www.industrie-expo.com/liste-catalogue-exposants/"
