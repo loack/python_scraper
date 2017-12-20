@@ -21,10 +21,11 @@ class ScraperboncoinSpider(scrapy.Spider):
         print("urls à etudier : ")    
         print(urls)
         print("-----------------------------")
-
         print("crawl des pages de référence")
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
+            
+            
             
     def parse(self, response):
         # listes des annonces de la page
@@ -44,8 +45,9 @@ class ScraperboncoinSpider(scrapy.Spider):
         #prix = response.css('h2.item_price::attr(content)').extract_first()
         #address = response.css('span[itemprop="address"]::text').extract_first()
         lines = response.css('div.line')
-        
+        url = ""
         data = []
+        infos = ''
         for li in lines:
             prop = li.css('span.property::text').extract_first()
             val = li.css('span.value::text').extract_first()
@@ -53,15 +55,21 @@ class ScraperboncoinSpider(scrapy.Spider):
                 if prop is not None:
                     prop = prop.strip()
                     val = val.strip()
+                    infos = infos + val + ','
                     data.append([prop,val])
                     
         description = response.css('p.value::text').extract_first()
         
+        infos = '\n'+name + ',' + url + ',' + infos + ',' + description
+        with open("data.csv", "a") as fichier:
+	           fichier.write(infos)
+	    	           
         yield {
             'Titre' : name,
-            'Data' : data,
-            'Description' : description.strip(),
+            #'Data' : data,
+            #'Description' : description.strip(),
             
         }
         
-        
+        # python json2csv/gen_outline.py --collection nodes test.js
+        #python json2csv/json2csv.py test.json
