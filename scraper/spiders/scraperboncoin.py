@@ -8,6 +8,10 @@ class ScraperboncoinSpider(scrapy.Spider):
     allowed_domains = ['leboncoin.fr']
     start_urls = ['http://leboncoin.fr/']
     item_urls = []
+    file_name = "data3.csv"
+    head = 
+    with open(file_name,'a') as file:
+        file.write(head)
     
     def start_requests(self):
         url_base = "https://www.leboncoin.fr/ventes_immobilieres/offres/rhone_alpes/?o="
@@ -42,34 +46,40 @@ class ScraperboncoinSpider(scrapy.Spider):
         # extraire les infos de chacunes des annonces 
         name = response.css('h1[itemprop="name"]::text').extract_first()
         name = name.strip()
-        #prix = response.css('h2.item_price::attr(content)').extract_first()
-        #address = response.css('span[itemprop="address"]::text').extract_first()
+        data = ['','','','','','','','']
+        header = ['Titre','Prix','Ville','Type de bien','Pièces','Surface','Description','Url']
+        
+        #extraction des datas de la feuille
+        #propriétés
         lines = response.css('div.line')
-        url = ""
-        data = []
-        infos = ''
         for li in lines:
             prop = li.css('span.property::text').extract_first()
             val = li.css('span.value::text').extract_first()
-            if val is not None:
-                if prop is not None:
-                    prop = prop.strip()
-                    val = val.strip()
-                    infos = infos + val + ','
-                    data.append([prop,val])
-                    
-        description = response.css('p.value::text').extract_first()
-        
-        infos = '\n'+name + ',' + url + ',' + infos + ',' + description
-        with open("data.csv", "a") as fichier:
-	           fichier.write(infos)
-	    	           
-        yield {
-            'Titre' : name,
-            #'Data' : data,
-            #'Description' : description.strip(),
             
-        }
+            if val is not None:
+                val = val.strip()
+                prop = prop.strip()
+                try:
+                    i = header.index(prop)
+                    data[i] = val
+                except:
+                    None
+ 
+        #ranger les datas
+        data[0] = name
+        data[6] = response.css('p.value::text').extract_first()
+        data[5] = response.url
+        print(data)
+        
+        #ranger les infos pour imprimer dans le fichier
+        ligne_infos = '\n'
+        for dat in data:
+            ligne_infos = ligne_infos + ',' + dat
+            
+        with open("data3.csv", "a") as fichier:
+	           fichier.write(ligne_infos)
+	    	           
+        yield None
         
         # python json2csv/gen_outline.py --collection nodes test.js
         #python json2csv/json2csv.py test.json
