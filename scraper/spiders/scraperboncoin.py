@@ -8,14 +8,16 @@ class ScraperboncoinSpider(scrapy.Spider):
     allowed_domains = ['leboncoin.fr']
     start_urls = ['http://leboncoin.fr/']
     item_urls = []
-    file_name = "data3.csv"
-    head = 
+    file_name = "data.csv"
+    head = "Titre,Prix,Ville,Type de Bien,Pièces,Surface,Prix m2,Description,Url"
     with open(file_name,'a') as file:
+        file.write('# -*- coding: utf-8 -*-')
+        file.write('\n')
         file.write(head)
     
     def start_requests(self):
-        url_base = "https://www.leboncoin.fr/ventes_immobilieres/offres/rhone_alpes/?o="
-        max = 1
+        url_base = "https://www.leboncoin.fr/ventes_immobilieres/offres/rhone_alpes/rhone/?o="
+        max = 400
         urls = []
         i = 0
  
@@ -46,8 +48,8 @@ class ScraperboncoinSpider(scrapy.Spider):
         # extraire les infos de chacunes des annonces 
         name = response.css('h1[itemprop="name"]::text').extract_first()
         name = name.strip()
-        data = ['','','','','','','','']
-        header = ['Titre','Prix','Ville','Type de bien','Pièces','Surface','Description','Url']
+        data = ['','','','','','','','','']
+        header = ['Titre','Prix','Ville','Type de bien','Pièces','Surface','Prix m2','Description','Url']
         
         #extraction des datas de la feuille
         #propriétés
@@ -64,19 +66,28 @@ class ScraperboncoinSpider(scrapy.Spider):
                     data[i] = val
                 except:
                     None
+        #if data[5] is not '':
+        #   surface = data[5].split(' ')
+        #    surface = surface[0]
+        #    prix = data[1].split(' ')
+        #    prix = int(prix[0]) * 1000
+        #    prix = prix/surface
+        #    data[6] = str(prix)
  
         #ranger les datas
         data[0] = name
-        data[6] = response.css('p.value::text').extract_first()
-        data[5] = response.url
-        print(data)
+        data[2] = response.css('span.value[itemprop="address"]::text').extract_first().strip()
+        data[7] = response.css('p.value::text').extract_first()
+        data[8] = response.url
         
+        print(data)
         #ranger les infos pour imprimer dans le fichier
         ligne_infos = '\n'
         for dat in data:
+            dat = dat.replace(',',' ')
             ligne_infos = ligne_infos + ',' + dat
             
-        with open("data3.csv", "a") as fichier:
+        with open(self.file_name, "a") as fichier:
 	           fichier.write(ligne_infos)
 	    	           
         yield None
